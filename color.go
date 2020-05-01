@@ -3,13 +3,13 @@ package bashColor
 import "fmt"
 
 type Color struct {
-	Code Coder
+	Coder
 }
 
 func NewColor() Colorer {
 	var color Colorer
 	color = &Color{
-		Code: NewCode(),
+		NewCode(),
 	}
 	return color
 }
@@ -39,26 +39,26 @@ func (c *Color) Fatal(message ...interface{}) string {
 }
 
 func (c *Color) Black(message ...interface{}) string {
-	return c.Format(c.Code.GetColor(Black) + "%s" + c.Code.GetColor(Default))(message...)
+	return c.Format(c.GetColor(Black) + "%s" + c.GetColor(Default))(message...)
 }
 func (c *Color) Red(message ...interface{}) string {
-	return c.Format(c.Code.GetColor(Red) + "%s" + c.Code.GetColor(Default))(message...)
+	return c.Format(c.GetColor(Red) + "%s" + c.GetColor(Default))(message...)
 }
 func (c *Color) Green(message ...interface{}) string {
-	return c.Format(c.Code.GetColor(Green) + "%s" + c.Code.GetColor(Default))(message...)
+	return c.Format(c.GetColor(Green) + "%s" + c.GetColor(Default))(message...)
 }
 func (c *Color) Yellow(message ...interface{}) string {
-	return c.Format(c.Code.GetColor(Yellow) + "%s" + c.Code.GetColor(Default))(message...)
+	return c.Format(c.GetColor(Yellow) + "%s" + c.GetColor(Default))(message...)
 }
 func (c *Color) Purple(message ...interface{}) string {
-	return c.Format(c.Code.GetColor(Purple) + "%s" + c.Code.GetColor(Default))(message...)
+	return c.Format(c.GetColor(Purple) + "%s" + c.GetColor(Default))(message...)
 }
 func (c *Color) Magenta(message ...interface{}) string {
-	return c.Format(c.Code.GetColor(Magenta) + "%s" + c.Code.GetColor(Default))(message...)
+	return c.Format(c.GetColor(Magenta) + "%s" + c.GetColor(Default))(message...)
 }
 func (c *Color) Teal(message ...interface{}) string {
-	return c.Format(c.Code.GetColor(Teal) + "%s" + c.Code.GetColor(Default))(message...)
+	return c.Format(c.GetColor(Teal) + "%s" + c.GetColor(Default))(message...)
 }
 func (c *Color) White(message ...interface{}) string {
-	return c.Format(c.Code.GetColor(White) + "%s" + c.Code.GetColor(Default))(message...)
+	return c.Format(c.GetColor(White) + "%s" + c.GetColor(Default))(message...)
 }

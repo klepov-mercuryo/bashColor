@@ -1,6 +1,7 @@
 package bashColor
 
 type Colorer interface {
+	Coder
 	Writer
 	FormatEventMessenger
 	FormatColorMessenger
