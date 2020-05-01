@@ -1,55 +1,94 @@
 package bashColor
 
+// key for color ascii code default
 const Default = "Default"
+
+// key for color ascii code black
 const Black = "Black"
+
+// key for color ascii code red
 const Red = "Red"
+
+// key for color ascii code green
 const Green = "Green"
+
+// key for color ascii code yellow
 const Yellow = "Yellow"
+
+// key for color ascii code purple
 const Purple = "Purple"
+
+// key for color ascii code magenta
 const Magenta = "Magenta"
+
+// key for color ascii code teal
 const Teal = "Teal"
+
+// key for color ascii code white
 const White = "White"
 
-const DefaultCode = "\033[0m"
-const BlackCode = "\033[1;30m"
-const RedCode = "\033[1;31m"
-const GreenCode = "\033[1;32m"
-const YellowCode = "\033[1;33m"
-const PurpleCode = "\033[1;34m"
-const MagentaCode = "\033[1;35m"
-const TealCode = "\033[1;36m"
-const WhiteCode = "\033[1;37m"
+// ascii code default
+const defaultCode = "\033[0m"
 
-type Code struct {
+// ascii code black
+const blackCode = "\033[1;30m"
+
+// ascii code red
+const redCode = "\033[1;31m"
+
+// ascii code green
+const greenCode = "\033[1;32m"
+
+// ascii code yellow
+const yellowCode = "\033[1;33m"
+
+// ascii code purple
+const purpleCode = "\033[1;34m"
+
+// ascii code magenta
+const magentaCode = "\033[1;35m"
+
+// ascii code teal
+const tealCode = "\033[1;36m"
+
+// ascii code white
+const whiteCode = "\033[1;37m"
+
+type code struct {
 	codes map[string]string
 }
 
-func (c *Code) GetColor(name string) string {
+// Getting ascii code color
+func (c *code) GetColor(name string) string {
 	return c.codes[name]
 }
-func (c *Code) SetColors(codes map[string]string) Coder {
+
+// Set ascii colors codes
+func (c *code) SetColors(codes map[string]string) Coder {
 	c.codes = codes
 	return c
 }
 
+// Interface codes
 type Coder interface {
 	SetColors(map[string]string) Coder
 	GetColor(string) string
 }
 
+// Constructor Codes, is created and populated with default values.
 func NewCode() Coder {
-	var code Coder
-	code = &Code{}
+	var c Coder
+	c = &code{}
 
-	return code.SetColors(map[string]string{
-		Default: DefaultCode,
-		Black:   BlackCode,
-		Red:     RedCode,
-		Green:   GreenCode,
-		Yellow:  YellowCode,
-		Purple:  PurpleCode,
-		Magenta: MagentaCode,
-		Teal:    TealCode,
-		White:   WhiteCode,
+	return c.SetColors(map[string]string{
+		Default: defaultCode,
+		Black:   blackCode,
+		Red:     redCode,
+		Green:   greenCode,
+		Yellow:  yellowCode,
+		Purple:  purpleCode,
+		Magenta: magentaCode,
+		Teal:    tealCode,
+		White:   whiteCode,
 	})
 }
