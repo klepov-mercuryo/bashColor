@@ -1,5 +1,5 @@
 # bash-color
-##Installation
+## Installation
 #### Use go get.
 ```bash
 go get github.com/evgeny-klyopov/bashColor
