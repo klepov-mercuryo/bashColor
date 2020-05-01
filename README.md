@@ -1,4 +1,3 @@
-# bash-color
 ## Installation
 #### Use go get.
 ```bash
