@@ -64,20 +64,26 @@ func (c *code) GetColor(name string) string {
 }
 
 // Set ascii colors codes
-func (c *code) SetColors(codes map[string]string) Coder {
+func (c *code) SetColors(codes map[string]string) coder {
 	c.codes = codes
 	return c
 }
 
+// Get ascii colors codes
+func (c *code) GetColors() map[string]string {
+	return c.codes
+}
+
 // Interface codes
-type Coder interface {
-	SetColors(map[string]string) Coder
+type coder interface {
+	SetColors(map[string]string) coder
+	GetColors() map[string]string
 	GetColor(string) string
 }
 
 // Constructor Codes, is created and populated with default values.
-func NewCode() Coder {
-	var c Coder
+func newCode() coder {
+	var c coder
 	c = &code{}
 
 	return c.SetColors(map[string]string{

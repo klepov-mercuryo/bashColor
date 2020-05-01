@@ -4,14 +4,14 @@ import "fmt"
 
 // Color struct
 type Color struct {
-	Coder
+	coder
 }
 
 // Return interface Colorer
 func NewColor() Colorer {
 	var color Colorer
 	color = &Color{
-		NewCode(),
+		newCode(),
 	}
 	return color
 }
